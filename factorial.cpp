@@ -1,44 +1,28 @@
 #include <stdio.h>
-#define FACTORIAL_EXPLAIN "<ÆÑÅä¸®¾ó>Àº 1ºÎÅÍ ¾î¶² ¾çÀÇ Á¤¼ö n±îÁöÀÇ Á¤¼ö¸¦ ¸ğµÎ °öÇÑ °ÍÀ» ¸»ÇÏ¸ç n!·Î ³ªÅ¸³¾ ¼ö ÀÖ´Ù."
-#define FACTORIAL_FORMAT "ÆÑÅä¸®¾ó Çü½Ä: n! = n*(n-1)*(n-2)*(n-3)*...*1\n"
-#define FACTORIAL_EX "<ÆÑÅä¸®¾ó ¿¹Á¦>\n"
-int main()
-{
-	long n, i, storage; 
+#define FACTORIAL_EXPLAIN "<íŒ©í† ë¦¬ì–¼>ì€ 1ë¶€í„° ì–´ë–¤ ì–‘ì˜ ì •ìˆ˜ nê¹Œì§€ì˜ ì •ìˆ˜ë¥¼ ëª¨ë‘ ê³±í•œ ê²ƒì„ ë§í•˜ë©° n!ë¡œ ë‚˜íƒ€ë‚¼ ìˆ˜ ìˆë‹¤."
+#define FACTORIAL_FORMAT "íŒ©í† ë¦¬ì–¼ í˜•ì‹: n! = n*(n-1)*(n-2)*(n-3)*...*1\n"
+#define FACTORIAL_EX "<íŒ©í† ë¦¬ì–¼ ì˜ˆì œ>\n"
+int main() {
+	long n, i, storage;
 	printf("%s\n%s\n%s", FACTORIAL_EXPLAIN, FACTORIAL_FORMAT, FACTORIAL_EX);
-
-	printf("º¯¼ö nÀÇ °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä: (´Ü, 0 ~ 2147483647 ¼ıÀÚ ¹üÀ§ ¾È)\n");
+	printf("ë³€ìˆ˜ nì˜ ê°’ì„ ì…ë ¥í•˜ì„¸ìš”: (ë‹¨, 0 ~ 2147483647 ìˆ«ì ë²”ìœ„ ì•ˆ)\n");
 	scanf("%d", &n);
-
 	printf("\n%d!\n=", n);
-
 	storage = 1;
-	if(n==0)
-	{
+	if(n==0) {
 		printf("1\n");
-	}
-
-	else if(n<0)
-	{
-		printf("¿À·ù! nÀÇ °ªÀº <À½ÀÌ ¾Æ´Ñ Á¤¼ö>¿©¾ß ÇØ¿ä!\n");
-	}
-
-	else
-	{
-	for(i=n; i>0; i--) 
-			{
-				storage = storage*i;
-
-				if(i == 1) 
-					{
-						printf("%d\n=%d\n", i, storage); //
-					}
-				else
-					{
-						printf("%d*", i);
-						
-					}					
+	} else if(n<0) {
+		printf("ì˜¤ë¥˜! nì˜ ê°’ì€ <ìŒì´ ì•„ë‹Œ ì •ìˆ˜>ì—¬ì•¼ í•´ìš”!\n");
+	} else {
+		for (i=n; i>0; i--) {
+			storage = storage*i;
+			if(i == 1) {
+				printf("%d\n=%d\n", i, storage);
+				//
+			} else {
+				printf("%d*", i);
 			}
+		}
 	}
-		return 0;
+	return 0;
 }
