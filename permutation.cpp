@@ -1,38 +1,29 @@
 #include <stdio.h>
-#define PERMUTATION_EXPLAIN "¼­·Î ´Ù¸¥ n°³¿¡¼­ r [0<r<=n] °³¸¦ ÅÃÇÏ¿© ÀÏ·Ä·Î ³ª¿­ÇÏ´Â °ÍÀ» n°³¿¡¼­ r°³¸¦ ÅÃÇÏ´Â <¼ø¿­>ÀÌ¶ó°í ÇÑ´Ù."
-#define PERMUTATION_FORMAT "¼ø¿­ÀÇ Çü½Ä: nPr = n*(n-1)*(n-2)*...*(n-r+1)\n"
-#define PERMUTATION_EX "<¼ø¿­ÀÇ ¿¹Á¦>"
-int main()
-{
-	long n, r, i, storage; 
-	printf("%s\n%s\n%s\n", PERMUTATION_EXPLAIN, PERMUTATION_FORMAT, PERMUTATION_EX); //
-
-	printf("º¯¼ö nÀÇ °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä: (´Ü, 0 ~ 2147483647 ¼ıÀÚ ¹üÀ§ ¾È)\n");
+#define PERMUTATION_EXPLAIN "ì„œë¡œ ë‹¤ë¥¸ nê°œì—ì„œ r [0<r<=n] ê°œë¥¼ íƒí•˜ì—¬ ì¼ë ¬ë¡œ ë‚˜ì—´í•˜ëŠ” ê²ƒì„ nê°œì—ì„œ rê°œë¥¼ íƒí•˜ëŠ” <ìˆœì—´>ì´ë¼ê³  í•œë‹¤."
+#define PERMUTATION_FORMAT "ìˆœì—´ì˜ í˜•ì‹: nPr = n*(n-1)*(n-2)*...*(n-r+1)\n"
+#define PERMUTATION_EX "<ìˆœì—´ì˜ ì˜ˆì œ>"
+int main() {
+	long n, r, i, storage;
+	printf("%s\n%s\n%s\n", PERMUTATION_EXPLAIN, PERMUTATION_FORMAT, PERMUTATION_EX);
+	//
+	printf("ë³€ìˆ˜ nì˜ ê°’ì„ ì…ë ¥í•˜ì„¸ìš”: (ë‹¨, 0 ~ 2147483647 ìˆ«ì ë²”ìœ„ ì•ˆ)\n");
 	scanf("%d", &n);
-	printf("º¯¼ö rÀÇ °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä: (´Ü, 0 ~ 2147483647 ¼ıÀÚ ¹üÀ§ ¾È)\n");
+	printf("ë³€ìˆ˜ rì˜ ê°’ì„ ì…ë ¥í•˜ì„¸ìš”: (ë‹¨, 0 ~ 2147483647 ìˆ«ì ë²”ìœ„ ì•ˆ)\n");
 	scanf("%d", &r);
-
-
 	storage = 1;
-	if(r<=0 || r>n)
-	{
-		printf("\n¿À·ù! rÀÇ °ªÀº 0º¸´Ù Ä¿¾ß ÇÏ¸ç nÀÇ °ªÀº rÀÇ °ª°ú °°°Å³ª Ä¿¾ß ÇÕ´Ï´Ù. (¶ÇÇÑ, Á¤¼ö¿©¾ß ÇÕ´Ï´Ù.)\n");
-	}
-	else 
-	{
+	if(r<=0 || r>n) {
+		printf("\nì˜¤ë¥˜! rì˜ ê°’ì€ 0ë³´ë‹¤ ì»¤ì•¼ í•˜ë©° nì˜ ê°’ì€ rì˜ ê°’ê³¼ ê°™ê±°ë‚˜ ì»¤ì•¼ í•©ë‹ˆë‹¤. (ë˜í•œ, ì •ìˆ˜ì—¬ì•¼ í•©ë‹ˆë‹¤.)\n");
+	} else {
 		printf("\n%dP%d\n=", n, r);
-		for(i=n; i>n-r; i--) 
-			{
-				storage=storage*i;
-					if(i == n-r+1) 
-						{
-							printf("%d\n=%d\n", i, storage); //
-						}
-					else
-						{
-							printf("%d*", i);
-						}			
+		for (i=n; i>n-r; i--) {
+			storage=storage*i;
+			if(i == n-r+1) {
+				printf("%d\n=%d\n", i, storage);
+				//
+			} else {
+				printf("%d*", i);
 			}
+		}
 	}
-		return 0;
+	return 0;
 }
