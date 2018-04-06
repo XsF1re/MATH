@@ -13,7 +13,19 @@ int main()
 	printf("\n%d!\n=", n);
 
 	storage = 1;
-		for(i=n; i>0; i--) 
+	if(n==0)
+	{
+		printf("1\n");
+	}
+
+	else if(n<0)
+	{
+		printf("오류! n의 값은 <음이 아닌 정수>여야 해요!\n");
+	}
+
+	else
+	{
+	for(i=n; i>0; i--) 
 			{
 				storage = storage*i;
 
@@ -27,6 +39,6 @@ int main()
 						
 					}					
 			}
-
+	}
 		return 0;
 }
