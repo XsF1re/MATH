@@ -1,18 +1,18 @@
 #include <stdio.h>
-#define CIRCULAR_PERMUTATION_EXPLAIN "¼­·Î ´Ù¸¥ n°³¸¦ ¿øÇüÀ¸·Î ¹è¿­ÇÏ´Â ¼ø¿­À» <¿ø¼ø¿­>ÀÌ¶ó°í ÇÑ´Ù."
-#define CIRCULAR_PERMUTATION_FORMAT "¿ø¼ø¿­ Çü½Ä: n!/n = (n-1)!"
-#define CIRCULAR_PERMUTATION_EX "\n<¿ø¼ø¿­ ¿¹Á¦>\n"
+#define CIRCULAR_PERMUTATION_EXPLAIN "ì„œë¡œ ë‹¤ë¥¸ nê°œë¥¼ ì›í˜•ìœ¼ë¡œ ë°°ì—´í•˜ëŠ” ìˆœì—´ì„ <ì›ìˆœì—´>ì´ë¼ê³  í•œë‹¤."
+#define CIRCULAR_PERMUTATION_FORMAT "ì›ìˆœì—´ í˜•ì‹: n!/n = (n-1)!"
+#define CIRCULAR_PERMUTATION_EX "\n<ì›ìˆœì—´ ì˜ˆì œ>\n"
 int main() {
 	long n, i, storage;
 	printf("%s\n%s\n%s", CIRCULAR_PERMUTATION_EXPLAIN, CIRCULAR_PERMUTATION_FORMAT, CIRCULAR_PERMUTATION_EX);
-	printf("º¯¼ö nÀÇ °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä: (´Ü, 0 ~ 2147483647 ¼ýÀÚ ¹üÀ§ ¾È)\n");
+	printf("ë³€ìˆ˜ nì˜ ê°’ì„ ìž…ë ¥í•˜ì„¸ìš”: (ë‹¨, 0 ~ 2147483647 ìˆ«ìž ë²”ìœ„ ì•ˆ)\n");
 	scanf("%d", &n);
-	printf("\n%d!\n=", n);
+	printf("\n%d!/%d\n=", n, n);
 	storage = 1;
-	if(n==0) {
+	if(n==1) {
 		printf("1\n");
-	} else if(n<0) {
-		printf("¿À·ù! nÀÇ °ªÀº <À½ÀÌ ¾Æ´Ñ Á¤¼ö>¿©¾ß ÇØ¿ä!\n");
+	} else if(n<1) {
+        printf("ì˜¤ë¥˜! nì˜ ê°’ì€ <0ë³´ë‹¤ í° ì •ìˆ˜>ì—¬ì•¼ í•´ìš”!\n");
 	} else {
 		for (i=n; i>0; i--) {
 			storage = storage*i;
