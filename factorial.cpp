@@ -18,7 +18,6 @@ int main() {
 			storage = storage*i;
 			if(i == 1) {
 				printf("%d\n=%d\n", i, storage);
-				//
 			} else {
 				printf("%d*", i);
 			}
