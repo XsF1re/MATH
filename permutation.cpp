@@ -4,8 +4,7 @@
 #define PERMUTATION_EX "<순열의 예제>"
 int main() {
 	long n, r, i, storage;
-	printf("%s\n%s\n%s\n", PERMUTATION_EXPLAIN, PERMUTATION_FORMAT, PERMUTATION_EX);
-	//
+	printf("%s\n%s\n%s\n", PERMUTATION_EXPLAIN, PERMUTATION_FORMAT, PERMUTATION_EX)
 	printf("변수 n의 값을 입력하세요: (단, 0 ~ 2147483647 숫자 범위 안)\n");
 	scanf("%d", &n);
 	printf("변수 r의 값을 입력하세요: (단, 0 ~ 2147483647 숫자 범위 안)\n");
@@ -19,7 +18,6 @@ int main() {
 			storage=storage*i;
 			if(i == n-r+1) {
 				printf("%d\n=%d\n", i, storage);
-				//
 			} else {
 				printf("%d*", i);
 			}
